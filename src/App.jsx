@@ -66,14 +66,31 @@
 
 
 
-// import React, { useState } from 'react'
+
+
+// >>>>>>>>>>>>>>>>>>hook is a sort of thing that remains independent of rerenders 
+
+// import React, { useEffect, useState } from 'react'
+
+// //the normal variablel changes noramlly
+// //the state variable only change when the value is changed from setStatevariable if the default value is dynamic in state variable then also it won't changed
+// //so to change the value setStateVariable should called and when there any new value is pused to setstatevariable rerender happens againa and again
 
 // const App = () => {
 //   const [count , setCount] = useState(0);
-//   console.log("hello world")
+//   const [statevariable , setstatevariable] = useState(Math.random());
+//   let a = Math.random();
+//   console.log(count);
+//   console.log("this is state variablel " + statevariable);
+//   console.log("this is normal varaible " + a);
+
+//   console.log("render")
+
 //   setTimeout(() => {
-//     setCount(1);
-//   }, 1000);
+//     setCount(Math.random());
+//   }, 5000)
+
+
 
 //   return (
 //     <div>
@@ -89,6 +106,11 @@
 
 
 
+
+
+
+
+
 import React, { useEffect, useState } from 'react'
 
 //the normal variablel changes noramlly
@@ -99,16 +121,27 @@ const App = () => {
   const [count , setCount] = useState(0);
   const [statevariable , setstatevariable] = useState(Math.random());
   let a = Math.random();
-  console.log(count);
-  console.log("this is state variablel " + statevariable);
-  console.log("this is normal varaible " + a);
+  // console.log(count);
+  // console.log("this is state variablel " + statevariable);
+  // console.log("this is normal varaible " + a);
 
-  console.log("render")
+  console.log("render");
 
-  setTimeout(() => {
-    setCount(Math.random());
-  }, 5000)
+  // useEffect(()=>{
+  //   console.log("hello")
+  //   setTimeout(() => {
+  //     setCount(Math.random());
+  //   }, 5000)
+  
+  // } , []);
 
+    useEffect(()=>{
+    console.log("hello")
+    setInterval(() => {
+      setCount(Math.random());
+    }, 5000)
+  
+  } , []);
 
 
   return (
@@ -122,7 +155,6 @@ const App = () => {
 }
 
 export default App
-
 
 
 
