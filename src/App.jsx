@@ -54,3 +54,11 @@ console.log("render")
 }
 
 export default App
+
+
+
+
+
+//any times state variable changes re render happens
+// in this case we are assinging Math.random which changes again and agina dones't remain same so when we assing  the new value in state variablel the state variable changes and rerender happen
+//lets say noremaly we change our state variable putting 1 in this caes rerender dones't happen again and agian becuase after some thime the react feels that the value is same everytime so i will not rerender again
