@@ -137,10 +137,12 @@ const App = () => {
 
     useEffect(()=>{
     console.log("hello")
+ 
     setInterval(() => {
       setCount(Math.random());
-    }, 5000)
   
+    }, 5000)
+  console.log("hello")
   } , []);
 
 
